@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Governor-Engraved';
+    src:url('Assets/webfonts/Governor-Engraved.ttf.woff') format('woff'),
+        url('Assets/webfonts/Governor-Engraved.ttf.svg#Governor-Engraved') format('svg'),
+        url('Assets/webfonts/Governor-Engraved.ttf.eot'),
+        url('Assets/webfonts/Governor-Engraved.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anton';
+    src:url('Assets/Anton/Anton-Regular.ttf');
+        
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'Anton';
+}
+
+.logo{
+    padding: 3px;
+    width: 5em;
+    height: auto;
+}
