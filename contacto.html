@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Style.css">
     <script src="main.js"></script>
-    <Script src="productos.json"></Script>
+    
 
 </head>
 <body>
@@ -45,29 +45,79 @@
         <main class="container">
             
             <div class="row mt-3 p-3 shadow-lg bg-body-tertiary rounded">
-                <h4 class="text-center">Todo lo que necesitas en suplementos deportivos</h5>
+                <h4 class="text-center">Contacta con nosotros para tu mejor asesoramiento</h5>
                 <hr class="mt-2 mb-3 shadow-lg bg-body-tertiary rounded">
             </div>
 
-            <div class="row mt-3 p-3 shadow-lg bg-body-tertiary rounded">
-                <p class="">¡En Block Gym, nos enorgullece ofrecer más que solo un espacio de entrenamiento excepcional! También somos tu destino confiable para la venta y distribución de suplementos deportivos de la más alta calidad. Nuestra selección premium incluye productos esenciales como whey protein para optimizar la recuperación muscular, creatina para potenciar tu rendimiento, pre-entrenos para un impulso de energía antes del entrenamiento y BCAAs para favorecer la recuperación y el crecimiento muscular.</p>
-                <p>Entendemos que la nutrición es clave en tu viaje fitness, y es por eso que nos asociamos con las marcas más destacadas para garantizar que obtengas los mejores resultados. Ya sea que estés buscando mejorar tu fuerza, resistencia o simplemente complementar tu dieta, nuestros suplementos deportivos están diseñados para satisfacer tus necesidades.</p>
-                <p>Confía en Block Gym no solo para tu entrenamiento, sino también para proporcionarte los suplementos que te llevarán al siguiente nivel de rendimiento y bienestar. Descubre la excelencia en fitness y nutrición en un solo lugar: ¡Block Gym, donde cada detalle está diseñado para tu éxito!</p>
-            </div>
-
-
-            <div class="row mt-3 pt-3 pb-3 justify-content-around shadow-lg bg-body-tertiary rounded ">
-
-                <div class="row">
-                    <h5 class="text-center">Productos Disponibles</h5>
+            
+            <form class="formulario mt-3 p-3 shadow-lg bg-body-tertiary rounded" id="formulario">
+                <div class="row m-2">
+                    <div class="col"> 
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <div id="errorNombre" class="error-message"></div>
+                    </div>
+                    
+                    <div class="col"> 
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido">
+                        <div id="errorApellido" class="error-message"></div>
+                    </div>
+        
+                    <div class="col">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                        <div id="errorFechaNacimiento" class="error-message"></div>
+                    </div>
+                </div>
+        
+                <div class="row m-2">
+                    <div class="col">
+                        <!-- Input de Correo Electrónico -->
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="text" id="correo" name="correo">
+                        <div id="errorCorreo" class="error-message"></div>
+                    </div>
+        
+                    <div class="col">
+                        <!-- Input de Teléfono -->
+                        <label for="telefono">Teléfono:</label>
+                        <label for="telefono">+54</label>
+                        <input type="tel" id="telefono" name="telefono">
+                        <div id="errorTelefono" class="error-message"></div>
+                    </div>
                 </div>
                 
-                <div class="row row-cols-1 row-cols-md-6 justify-content-around" id="productos-container">
-
+                <div class="row m-2"> 
+                    <!-- Menú Desplegable para Selección de Plan -->
+                    <label for="plan">Planes de entrenamiento:</label>
+                    <select id="plan" name="plan">
+                        <option value="">Selecciona tu plan</option>
+                        <option value="plan1">Plan de Pérdida de Peso</option>
+                        <option value="plan2">Plan de Musculación</option>
+                        <option value="plan3">Plan de Crossfit</option>
+                    </select>
+                    <div id="errorPlan" class="error-message"></div>
                 </div>
+        
+                <div>
+                    <!-- Casillas de Verificación para Intereses -->
+                    <p>Selecciona tus cuantas veces por semana:</p>
+                    <input type="checkbox" id="1veces" name="intereses" value="1xSemana">
+                    <label for="1veces">1 x semana</label>
+        
+                    <input type="checkbox" id="3veces" name="intereses" value="3xSemana">
+                    <label for="3veces">3 x semana</label>
+        
+                    <input type="checkbox" id="libre" name="intereses" value="paseLibre">
+                    <label for="libre">Pase libre</label>
 
-
-            </div>
+                    <div id="errorVeces" class="error-message"></div>
+        
+                    <!-- Botón de Envío -->
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
 
             
 
