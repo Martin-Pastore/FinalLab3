@@ -55,3 +55,31 @@
     position:absolute;
 
 }
+
+.error-message{
+    display: flex;
+    font-size: small;   
+    color: red;
+    
+
+}
+
+.succes{
+
+    border: solid 2px green;
+}
+
+.error{
+    border: solid 2px red;
+}
+
+.mi-clase-botones {
+    width: auto; /* O el ancho deseado para el botón */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+ }
+
+ .galeria-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }

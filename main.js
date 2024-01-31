@@ -47,11 +47,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const  form = document.getElementById('formulario');
     // Expresión regular para verificar que solo haya una palabra
     
+    form.addEventListener('change', function(){
+        // Aquí cada vez que cambia su valor.
+        
+        resetearMensajesError()
+        validarNombre()
+        validarApellido()
+        validarFecha()
+        validarCorreo()
+        validarTelefono()
+        validarPlan()
+        validarVeces()
+        
+
+     })
 
     form.addEventListener("submit", e=>{
         e.preventDefault();
-        resetearMensajesError()
         
+        resetearMensajesError()
         validarNombre()
         validarApellido()
         validarFecha()
@@ -60,6 +74,23 @@ document.addEventListener('DOMContentLoaded', function() {
         validarPlan()
         validarVeces()
 
+        if(validarNombre()&&
+        validarApellido()&&
+        validarFecha()&&
+        validarCorreo()&&
+        validarTelefono()&&
+        validarPlan()&&
+        validarVeces()){
+            console.log("enviado")
+            form.submit()
+            alert("Los datos se han enviado correctamente!")
+        }
+        
+
+        
+
+        
+        
 
         
 
@@ -95,16 +126,24 @@ function validarNombre() {
     
     if(Nombre.value.length < 3 ){
         mostrarError("errorNombre", "Nombre muy Corto")
-        
+        Nombre.classList.add('error')
+        return false
     }
 
     if(!expresionRegular.test(Nombre.value)){
         mostrarError("errorNombre", "Solo debe ser una palabra")
+        Nombre.classList.add('error')
     }
 
     if(Nombre.value.trim() === ''){
         mostrarError("errorNombre", "El campo No puede estar vacio")
+        Nombre.classList.add('error')
     }
+
+    Nombre.classList.remove('error')
+    Nombre.classList.add('succes')
+    return true
+
 }
 
 function validarApellido() {
@@ -115,16 +154,25 @@ function validarApellido() {
     
     if(Apellido.value.length < 3 ){
         mostrarError("errorApellido", "Apellido muy Corto")
-        
+        Apellido.classList.add('error')
+        return false
     }
 
     if(!expresionRegular.test(Apellido.value)){
         mostrarError("errorApellido", "Solo debe ser una palabra")
+        Apellido.classList.add('error')
+        return false
     }
 
     if(Apellido.value.trim() === ''){
         mostrarError("errorApellido", "El campo No puede estar vacio")
+        Apellido.classList.add('error')
+        return false
     }
+
+    Apellido.classList.remove('error')
+    Apellido.classList.add('succes')
+    return true
 }
 
 function validarCorreo(){
@@ -133,11 +181,19 @@ function validarCorreo(){
     const expresionRegular = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     if (!expresionRegular.test(Correo.value)){
         mostrarError("errorCorreo", "introduzca una direccion valida")
+        Correo.classList.add('error')
+        return false
     }
 
     if(Correo.value.trim() === ''){
         mostrarError("errorCorreo", "El campo No puede estar vacio")
+        Correo.classList.add('error')
+        return false
     }
+
+    Correo.classList.remove('error')
+    Correo.classList.add('succes')
+    return true
 
 }
 
@@ -161,20 +217,26 @@ function validarFecha(){
     // Verificar si la fecha de nacimiento es menor a 10 años desde la actual
     if (fechaNacimientoDate > fechaMinima) {
         mostrarError('errorFechaNacimiento', 'No puedes ser menor de 10 años');
-        
+        Fecha.classList.add('error')
+        return false
     }
 
     // Verificar si la fecha de nacimiento es mayor a la fecha actual
     if (fechaNacimientoDate > fechaMaxima) {
         mostrarError('errorFechaNacimiento', 'La fecha de nacimiento no puede ser mayor a la fecha actual.');
-        
+        Fecha.classList.add('error')
+        return false
     }
 
     if (Fecha.value === ''){
         mostrarError("errorFechaNacimiento", "Seleccione una Fecha")
-        
+        Fecha.classList.add('error')
+        return false
     }
 
+    Fecha.classList.remove('error')
+    Fecha.classList.add('succes')
+    return true
 }
 
 function validarTelefono() {
@@ -187,12 +249,19 @@ function validarTelefono() {
     // Verificar si el formato del teléfono es válido
     if (!formatoTelefono.test(Telefono.value)) {
         mostrarError('errorTelefono', 'Ingresa un número de teléfono válido (por ejemplo, 123-456789).');
-        
+        Telefono.classList.add('error')
+        return false
     }
 
     if(Telefono.value.trim() === ''){
         mostrarError('errorTelefono', 'Ingresa un número de teléfono');
+        Telefono.classList.add('error')
+        return false
     }
+
+    Telefono.classList.remove('error')
+    Telefono.classList.add('succes')
+    return true
 
 }
 
@@ -202,22 +271,32 @@ function validarPlan(){
 
     if(Plan.value === ''){
         mostrarError("errorPlan", "Debe seleccionar un plan")
+        Plan.classList.add('error')
+        return false
     }
+
+    Plan.classList.remove('error')
+    Plan.classList.add('succes')    
+    return true
 
 }
 
 function validarVeces(){
-    var checkboxes = document.querySelectorAll('input[name="intereses"]:checked');
-    var cantidadSeleccionados = checkboxes.length;
-
+    let checkboxes = document.querySelectorAll('input[name="intereses"]:checked');
+    let cantidadSeleccionados = checkboxes.length;
+    
     // Verificar si se ha seleccionado exactamente una opción
     if (cantidadSeleccionados !== 1) {
         mostrarError('errorVeces', 'Debes seleccionar solo una opción.');
-        console.log("+0")
+        return false
     }
 
     if (cantidadSeleccionados === 0) {
         mostrarError('errorVeces', 'Debes seleccionar alguna opcion.');
-       console.log("0")
+        return false
+
     }
+
+    return true
+    
 }
