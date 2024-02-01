@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Governor-Engraved';
     src:url('Assets/webfonts/Governor-Engraved.ttf.woff') format('woff'),
@@ -82,4 +83,29 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+
+  .animacion{
+    transform:translateZ(0) rotateY(0);
+    transform:translateZ(160px) rotateY(180deg);
+    animation: 4s cubic-bezier(.455,.03,.515,.955) both;
+  }
+
+  
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in:hover {
+    opacity: 1;
+  }
+
+  .bounce {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .bounce:hover {
+    transform: translateY(-20px); /* O cualquier transformación deseada */
   }
