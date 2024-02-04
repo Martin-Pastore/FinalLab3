@@ -109,3 +109,16 @@
   .bounce:hover {
     transform: translateY(-20px); /* O cualquier transformación deseada */
   }
+
+  .shadow-pop {
+    position: relative;
+    transition: box-shadow ease-in-out;
+  }
+  
+  .shadow-pop:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1); /* Otra opción: aumentar el tamaño */
+  }
+
+  

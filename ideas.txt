@@ -1,3 +1,0 @@
-POKESMASH
-smash or pass de pokemon usando api para guardar los pokemon junto con una base de datos que guarde los resultados de la gente y muestre un promedio
-

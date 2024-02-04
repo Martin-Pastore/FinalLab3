@@ -300,3 +300,7 @@ function validarVeces(){
     return true
     
 }
+
+
+//carousel
+
