@@ -42,6 +42,8 @@ function mostrarDatosEnHTML(datos) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    
     // Código para obtener los valores después de que la página se ha cargado
     
     const  form = document.getElementById('formulario');
@@ -86,16 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Los datos se han enviado correctamente!")
         }
         
-
-        
-
-        
-        
-
-        
-
-        
-
     })
 
     
@@ -301,6 +293,28 @@ function validarVeces(){
     
 }
 
+function animar(){
+    document.getElementById('loader').classList.toggle("ocultar")
+    document.getElementById('titulo').classList.add("animated-text")
+    document.getElementById('subtitulo').classList.add("animated-text")
+    console.log("cargado")
+}
 
-//carousel
+window.addEventListener("load", function(){
+    setTimeout(animar,800)
+    
+})
 
+// Función para mostrar la imagen en grande al hacer clic en la miniatura
+function mostrarImagen(src) {
+    var modal = document.getElementById('modal');
+    var modalImg = document.getElementById('imagenAmpliada');
+    modal.style.display = 'flex';
+    modalImg.src = src;
+  }
+  
+  // Función para cerrar el modal
+  function cerrarModal() {
+    var modal = document.getElementById('modal');
+    modal.style.display = 'none';
+  }

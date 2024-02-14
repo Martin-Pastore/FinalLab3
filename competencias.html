@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Style.css">
+    <script src="main.js"></script>
     
 
 </head>
@@ -40,7 +41,11 @@
             
         
         <main class="container">
-            
+
+            <div class="loader-wrapper" id="loader">
+              <div class="loader"></div>
+            </div>
+          
             <div class="row mt-2 justify-content-center shadow-lg bg-body-tertiary rounded">
                 
                     <img src="Assets/blockGames/blockGames.png" class="rounded-5 img-fluid p-3" alt="...">
@@ -81,10 +86,10 @@
             <div class="row mt-4 p-5 shadow-lg bg-body-tertiary rounded">
                 <h5 class="text-center">¡Categorias disponibles para inscripcion!</h5>
                 <div class="row row-cols-1 row-cols-md-6 justify-content-around p-3">
-                    <img src="Assets/blockGames/nohd/cat1 (1).png" class="rounded bounce" alt="">
-                    <img src="Assets/blockGames/nohd/cat2.png" class="img bounce" alt="">
-                    <img src="Assets/blockGames/nohd/cat3.png" class="bounce" alt="">
-                    <img src="Assets/blockGames/nohd/cat4.png" class="bounce" alt="">
+                    <img src="Assets/blockGames/nohd/cat1 (1).png" class="img-fluid bounce" alt="">
+                    <img src="Assets/blockGames/nohd/cat2.png" class="img-fluid bounce" alt="">
+                    <img src="Assets/blockGames/nohd/cat3.png" class="img-fluid bounce" alt="">
+                    <img src="Assets/blockGames/nohd/cat4.png" class="img-fluid bounce" alt="">
                     <img src="Assets/blockGames/nohd/cat5.png" class="img-fluid bounce" alt="">
                 </div>
             </div>
@@ -92,9 +97,6 @@
             <div class="row mt-4 p-4 shadow-lg bg-body-tertiary rounded">
                 <h5 class="text-center">¿Estas Listo?</h5>
                 <P class="text-center">¿Estás listo para enfrentar el desafío y descubrir de lo que eres capaz? Los "Block Games" son tu oportunidad de demostrar tu fuerza, superar obstáculos y unirte a una experiencia que trasciende la competición: es un viaje de autodescubrimiento y crecimiento personal. ¡Prepárate para los "Block Games" y deja tu huella en la historia del fitness en nuestra comunidad!</P>
-                
-            
-            
             </div>
 
             <div class="row mt-4 p-4 shadow-lg bg-body-tertiary rounded">
@@ -103,51 +105,73 @@
                 
                 <div class="row">
                     <div class="col-12 col-md-4 mb-4">
-                      <img src="Assets/blockGames/gente7.png" class="img-fluid galeria-img rounded" alt="Foto 1">
+                      <img src="Assets/blockGames/gente7.png" class="img-fluid galeria-img rounded" alt="Foto 1" onclick="mostrarImagen(this.src)">
                     </div>
+                    
                     <div class="col-12 col-md-4 mb-4">
-                      <img src="Assets/blockGames/gente8.png" class="img-fluid galeria-img rounded" alt="Foto 2">
+                      <img src="Assets/blockGames/gente8.png" class="img-fluid galeria-img rounded" alt="Foto 2" onclick="mostrarImagen(this.src)">
                     </div>
+                    
                     <div class="col-12 col-md-4 mb-4">
-                      <img src="Assets/blockGames/gente9.png" class="img-fluid galeria-img rounded" alt="Foto 3">
+                      <img src="Assets/blockGames/gente9.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
                     </div>
+                    
                     <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente10.png" class="img-fluid galeria-img rounded" alt="Foto 1">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente5.png" class="img-fluid galeria-img rounded" alt="Foto 2">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente6.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente2.png" class="img-fluid galeria-img rounded" alt="Foto 1">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente3.png" class="img-fluid galeria-img rounded" alt="Foto 2">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente4.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente1.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente12.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gente13.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gracias.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gracias1.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-                      <div class="col-12 col-md-4 mb-4">
-                        <img src="Assets/blockGames/gracias2.png" class="img-fluid galeria-img rounded" alt="Foto 3">
-                      </div>
-            </div>
+                      <img src="Assets/blockGames/gente10.png" class="img-fluid galeria-img rounded" alt="Foto 1" onclick="mostrarImagen(this.src)">
+                    </div>
+                    
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente5.png" class="img-fluid galeria-img rounded" alt="Foto 2" onclick="mostrarImagen(this.src)">
+                    </div>
+                    
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente6.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente2.png" class="img-fluid galeria-img rounded" alt="Foto 1" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente3.png" class="img-fluid galeria-img rounded" alt="Foto 2" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente4.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente1.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente12.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gente13.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gracias.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gracias1.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+                      
+                    <div class="col-12 col-md-4 mb-4">
+                      <img src="Assets/blockGames/gracias2.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
+                    </div>
+
+                      <!-- Modal para mostrar la imagen en grande -->
+                    <div id="modal" class="modal">
+                      <span class="close" onclick="cerrarModal()">&times;</span>
+                      <img class="modal-content" id="imagenAmpliada">
+                    </div>
+          
+                </div>
+              </div>
 
 
          
