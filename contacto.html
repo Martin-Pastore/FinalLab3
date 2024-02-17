@@ -46,28 +46,24 @@
             <div class="loader"></div>
           </div>
             
-            <div class="row mt-3 p-3 shadow-lg bg-body-tertiary rounded animated-title-Top">
-                <h4 class="text-center ">¡FORMA PARTE DE LA FAMILIA BLOCK!</h5>
-                
-            </div>
+          <div class="row mt-3 p-3 shadow-lg bg-body-tertiary rounded animated-title-Top">
+            <h5 class="text-center">¿Como puedo hacer para inscribirme y formar parte de la familia Block?</h5>
+            <p class="text-center">Es muy sencillo, podes acercarte a cualquiera de nuestras dos sedes y hacerlo personalmente.</p>
+            <p class="text-center">¡Siempre estamos encantados de recibirte en nuestras instalaciones para un mejor asesoramiento cara a cara!</p>
+            <p class="lead text-center">Presentate en nuestras sedes Parque o Boulevard:</p>
+            
+            <a href="nosotros.html#localizacion" class="mi-clase-botones" target="_blank"><button class="rounded">Ver como llegar 📍</button></a>
             
             
-            <div class="row mt-3 p-3 shadow-lg bg-body-tertiary rounded animated-title-Top">
+          </div>
+            
+            <div class="row mt-3 p-3 justify-content-center shadow-lg bg-body-tertiary rounded animated-title-Top">
+              
+              <p class="text-center lead"> Pero si sos alguien ansioso que no le gusta perder el tiempo, podes hacerlo YA. Tan solo tenes que llenar un simple formulario</p>
 
-              <h5 class="text-center">¿Como puedo hacer para inscribirme y formar parte de la familia Block?</h5>
-              <p class="text-center">Es muy sencillo, podes acercarte a cualquiera de nuestras dos sedes y hacerlo personalmente.</p>
-              <p class="text-center"> Pero si sos alguien ansioso que no le gusta perder el tiempo, podes hacerlo YA. Tan solo tenes que llenar un simple formulario</p>
-
-              <button class="mi-clase-botones rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
-                Formulario de inscripcion
-              </button>
-
-
-              <div class="row collapse" id="collapseForm">
-
-                <form class="formulario mt-3 p-3" id="formulario">
-                  <div class="row m-2">
-                    
+              <form class="formulario m-3 p-3" id="formulario">
+                  <div class="row m-2 g-3">
+                    <p class="lead text-center">Formulario de Inscripcion:</p>
                     <div class="col"> 
                       <label for="nombre" class="form-label">Nombre:</label>
                       <input type="text" id="nombre" name="nombre">
@@ -88,7 +84,7 @@
                   
                   </div>
                       
-                  <div class="row m-2">
+                  <div class="row m-2 g-3">
                     <div class="col">
                       <label for="correo" class="form-label">Correo:</label>
                       <input type="text" id="correo" name="correo">
@@ -103,18 +99,20 @@
                     </div>
                   </div>
                               
-                  <div class="row m-2 p-3"> 
+                  <div class="row m-2 g-3"> 
                     <label for="plan" class="form-label">Planes de entrenamiento:</label>
                     <select id="plan" name="plan">
                       <option value="">Selecciona tu plan</option>
-                      <option value="plan1">Plan de Pérdida de Peso</option>
-                      <option value="plan2">Plan de Musculación</option>
-                      <option value="plan3">Plan de Crossfit</option>
+                      <option value="plan1">Bodybuilding</option>
+                      <option value="plan2">Crossfit</option>
+                      <option value="plan3">Boxeo</option>
+                      <option value="plan4">Core GAP</option>
+                      <option value="plan5">Entrenamiento Especial</option>
                     </select>
                     <div id="errorPlan" class="error-message"></div>
                   </div>
                       
-                  <div class="container-fluid">
+                  <div class="container-fluid m-2">
                     <p>Selecciona tus cuantas veces por semana:</p>
                     <input type="checkbox" id="1veces" name="intereses" value="1xSemana">
                     <label for="1veces" class="form-label">1 x semana</label>
@@ -127,49 +125,15 @@
               
                     <div id="errorVeces" class="error-message"></div>
                       
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button class="rounded shadow-pop mt-2" type="submit" id="enviarBtn">Enviar</button>
+                  
                   </div>
                           
                 </form>
 
-              </div>
             </div>
 
-            
-
-
-            <div class="row mt-3 p-3 shadow-lg bg-body-tertiary rounded animated-title-Top">
-              <p class="lead text-center">Para una experiencia más personal, ¡siempre estamos encantados de recibirte en nuestras instalaciones para un asesoramiento cara a cara!</p>
-              <p class="lead text-center">Presentate en nuestras sedes Parque o Boulevard </p>
-              
-              <a href="nosotros.html#localizacion" class="mi-clase-botones" target="_blank"><button class="rounded">Ver como llegar 📍</button></a>
-              
-              <p class="lead text-center mt-3">Si venis a visitarnos recorda hacerlo siempre dentro del horario de atencion al cliente</p>
-
-              
-              <button class="mi-clase-botones rounded" type="button" data-bs-toggle="collapse" data-bs-target="#horariosAtencion" aria-expanded="false" aria-controls="horariosAtencion">
-                    Ver horarios de atencion
-              </button>
-                
-              <div class="collapse" id="horariosAtencion">
-                  <div class="row justify-content-center p-2">
-                      <div class="col-md-2">
-                          <ul>
-                              <li>lunes 7:00-21:00</li>
-                              <li>martes 8:00-21:00</li>
-                              <li>miércoles 8:00-21:00</li>
-                              <li>jueves 8:00-21:00</li>
-                              <li>viernes 8:00-21:00</li>
-                              <li>sábado 10:00-13:00</li>
-                              <li>domingo CERRADO</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-
-            </div>
-
-            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded animated-title-Top">
+           <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded animated-title-Top">
 
               <div class="clearfix p-3">
                   
@@ -182,10 +146,10 @@
                       <p>¡La vida es mejor con amigos y más aún cuando compartes el gimnasio! En el mes del amigo, trae a tu amigo a entrenar con nosotros y, como muestra de agradecimiento, en agosto ambos disfrutarán de un descuento especial:</p>
                       <p>¡Ambos pagan solo el 50% de la cuota!</p>
                       <p>Únete a nosotros en este viaje de fitness y amistad. ¡Más diversión, más motivación y resultados juntos! 🏋️‍♂️🤝</p>
-                    </div>
-              </div>
+                  </div>
+               </div>
           
-          </div>
+            </div>
 
       
       

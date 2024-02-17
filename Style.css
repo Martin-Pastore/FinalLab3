@@ -407,3 +407,20 @@
   
   animation: moveFromDown 2s ease;
 }
+
+.formulario{
+  border: solid 1px #fd7b02;
+  border-radius: 5px;
+}
+
+#enviarBtn {
+  background-color: #fd7b02;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.8s ease;
+}
+
+#enviarBtn.exito {
+  background-color: #4caf50; /* Cambia a verde en éxito */
+}

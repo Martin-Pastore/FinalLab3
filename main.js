@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Código para obtener los valores después de que la página se ha cargado
     
     const  form = document.getElementById('formulario');
-    // Expresión regular para verificar que solo haya una palabra
+    const  boton= document.getElementById('enviarBtn')
     
     form.addEventListener('change', function(){
         // Aquí cada vez que cambia su valor.
@@ -83,9 +83,15 @@ document.addEventListener('DOMContentLoaded', function() {
         validarTelefono()&&
         validarPlan()&&
         validarVeces()){
-            console.log("enviado")
-            form.submit()
-            alert("Los datos se han enviado correctamente!")
+            
+            boton.classList.add('exito')
+            boton.innerText = '✅ Enviado! '
+            setTimeout(function() {
+                form.submit()
+                boton.classList.remove('exito')
+                boton.innerText = 'Enviar'
+
+              }, 2500)
         }
         
     })
@@ -279,15 +285,16 @@ function validarVeces(){
     
     // Verificar si se ha seleccionado exactamente una opción
     if (cantidadSeleccionados !== 1) {
+        if (cantidadSeleccionados === 0) {
+        mostrarError('errorVeces', 'Debes seleccionar alguna opcion.');
+        return false 
+        }
+
         mostrarError('errorVeces', 'Debes seleccionar solo una opción.');
         return false
     }
 
-    if (cantidadSeleccionados === 0) {
-        mostrarError('errorVeces', 'Debes seleccionar alguna opcion.');
-        return false
-
-    }
+    
 
     return true
     
