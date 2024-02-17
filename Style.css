@@ -81,13 +81,7 @@
     margin: 0 auto; /* Centra el botón horizontalmente */
  }
 
- .galeria-img {
-    object-fit: cover;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-  }
-
+ 
   .animacion{
     transform:translateZ(0) rotateY(0);
     transform:translateZ(160px) rotateY(180deg);
@@ -130,6 +124,16 @@
      .img{
       margin: 0px;
     }
+    
+  }
+
+  @media (max-width: 768px) {
+    /* Anulamos el efecto de hover para pantallas pequeñas */
+    .bounce:hover {
+      transform: none; /* Restablecemos la transformación a su estado original */
+    }
+
+
   }
 
 
@@ -191,11 +195,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 2000;
   }
 
   .ocultar {
@@ -216,11 +220,32 @@
     100% { transform: rotate(360deg); }
   }
 
-/* Estilo del modal */
+
+  .galeria-img {
+    object-fit: cover;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+
+  .galeria-img:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+
+  /* Estilo del modal */
 .modal {
   display: none;
   position: fixed;
   z-index: 10;
+  padding-top: 60px;
   left: 0;
   top: 0;
   width: 100%;
@@ -234,8 +259,8 @@
 .modal-content {
   margin: auto;
   display: block;
-  width: 100%;
-  max-width: 700px;
+  width: 80%;
+  max-width: 600px;
 }
 
 /* Estilo para cerrar el modal */
@@ -249,3 +274,136 @@
   cursor: pointer;
 }
 
+
+.categoria {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .6;
+  transition: .5s ease;
+}
+
+.categoria:hover {
+  cursor: pointer;
+  width: 80px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+/*animacion shake*/
+
+.shakeable {
+  cursor: pointer;
+ }
+ 
+ /* Define la animación de sacudida */
+ @keyframes shake {
+   0% { transform: translateX(0); }
+   25% { transform: translateX(-5px); }
+   50% { transform: translateX(5px); }
+   75% { transform: translateX(-5px); }
+   100% { transform: translateX(0); }
+ }
+ 
+ /* Aplica la animación a la clase 'shake' */
+ .shaking {
+   animation: shake 0.5s;
+ }
+
+ .blur{
+  animation: fadeIn 3s ease;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+
+  20% {
+    opacity: 1;
+    filter: brightness(2) blur(10px);
+  }
+  
+}
+
+
+.animated-title {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: moveFromLeft 2s ease;
+}
+
+/* Animación para desplazarse desde la izquierda */
+@keyframes moveFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Animación para desplazarse desde arriba*/
+@keyframes moveFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animated-title-Down {
+  position: relative;
+  overflow: hidden;
+  
+  animation: moveFromTop 2.3s ease;
+}
+
+
+@keyframes moveFromRigth {
+  from {
+    transform: translateX(+100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animated-card-Rigth {
+  position: relative;
+  overflow: hidden;
+  animation: moveFromRigth 1.5s ease;
+}
+
+.animated-card-left {
+  position: relative;
+  overflow: hidden;
+  animation: moveFromLeft 1.5s ease;
+}
+
+
+#suplementos:hover{
+  transform: perspective(600px) 
+  rotateX(10deg);
+  transition: .3s;
+}
+
+@keyframes moveFromDown {
+  from {
+    transform: translateY(+100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animated-title-Top {
+  position: relative;
+  overflow: hidden;
+  
+  animation: moveFromDown 2s ease;
+}

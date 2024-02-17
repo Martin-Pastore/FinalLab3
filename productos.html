@@ -46,14 +46,14 @@
             <div class="loader"></div>
           </div>
           
-            <div class="row mt-4 p-3 justify-content-center shadow-lg bg-body-tertiary rounded">
+            <div class="row mt-4 p-3 justify-content-center shadow-lg bg-body-tertiary rounded animated-card-Rigth">
                 <h4 class="text-center">SUPLEMENTACION DEPORTIVA</h4>
                 
             </div>
 
-            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded">
+            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded animated-card-left">
                 <div class="clearfix p-5">
-                    <img src="Assets/productos/imgs/keep.png" class="col-md-5 ms-4 float-md-end rounded img-fluid" alt="...">
+                    <img src="Assets/productos/imgs/keep.png" class="col-md-5 ms-4 float-md-end rounded img-fluid shakeable" title="Proba sacudiendo" onclick="sacudir(this)">
                   
                     <h4 class="text-center">Ruts Suplementos</h3>
                     <hr>
@@ -69,7 +69,7 @@
             </div>
 
 
-            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded">
+            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded animated-card-Rigth">
                 <div class="clearfix p-5">
                     <img src="Assets/productos/imgs/point.png" class="col-md-4 me-4 float-md-start rounded img-fluid" alt="...">
                   
@@ -92,11 +92,11 @@
             
             <div class="row mt-4 pt-3 pb-3 justify-content-center shadow-lg bg-body-tertiary rounded ">
 
-                <div class="row p-3">
+                <div class="row pt-2">
                     <h5 class="text-center" id="productosDisponibles">Productos Disponibles</h5>
                 </div>
                 
-                <div class="row row-cols-1 row-cols-md-4 justify-content-around" id="productos-container">
+                <div class="row row-cols-1 row-cols-md-4 g-3 justify-content-around" id="productos-container">
 
                 </div>
 
@@ -104,33 +104,16 @@
             </div>
 
             <div class="row mt-3 pt-2 pb-2 justify-content-center shadow-lg bg-body-tertiary rounded">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="Assets/productos/imgs/ruts1.1.png" class="galeria-img" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="Assets/productos/imgs/ruts2.1.png" class="galeria-img" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="Assets/productos/imgs/ruts3.1.png" class="galeria-img" alt="...">
-                      </div>
-                      
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Siguiente</span>
-                    </button>
-                </div>
+              <img src="Assets/productos/imgs/ruts2.1.png" class="img-fluid" id="rotar"> 
             </div>
             
            
 
-            
+            <div id="modal" class="modal">
+              <span class="close" onclick="cerrarModal()">&times;</span>
+              <img class="modal-content" id="imagenAmpliada">
+            </div>
+                  
             
 
             

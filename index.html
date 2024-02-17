@@ -52,7 +52,7 @@
                 
             </div>
            
-            <div class="row mt-3 pt-2 justify-content-center shadow-lg bg-body-tertiary rounded shadow-pop">
+            <div class="row mt-3 pt-2 justify-content-center shadow-lg bg-body-tertiary rounded">
               <div class="col-md-12" >
                 <div class="slider-frame">
                   <ul>
@@ -75,6 +75,7 @@
               
                   <div class="col my-3">
                       <p class="lead text-center">Vuelven Los BLOCK GAMES!!!</p>
+                      <hr>
                       <p class="text-center">¿Nos extrañaron? ¡La espera ha terminado! Anótalo en tu agenda: ¡Sábado 10 de Junio de 2024 marca el retorno de BLOCK GAMES 3.0!</p>
                       <p class="text-center">Estamos emocionados y esperamos que tú y tu compañero de entrenamiento estén listos para ser parte de esta experiencia única una vez más.</p>
                       <p class="text-center">¿Qué puedes esperar en esta edición? Desafíos aún más emocionantes, competencia amistosa y, por supuesto, ¡la oportunidad de demostrar tu fuerza y habilidad en cada prueba!</p>
@@ -118,20 +119,26 @@
             
             <div class="row">
                 <div class="col-12 col-md-4 mb-4">
-                  <img src="Assets/novedades/horarios1.png" class="img-fluid galeria-img rounded" alt="Foto 1">
+                  <img src="Assets/novedades/horarios1.png" class="img-fluid galeria-img rounded" alt="Foto 1" onclick="mostrarImagen(this.src)">
                 </div>
                 <div class="col-12 col-md-4 mb-4">
-                  <img src="Assets/novedades/horarios2.png" class="img-fluid galeria-img rounded" alt="Foto 2">
+                  <img src="Assets/novedades/horarios2.png" class="img-fluid galeria-img rounded" alt="Foto 2" onclick="mostrarImagen(this.src)">
                 </div>
                 <div class="col-12 col-md-4 mb-4">
-                  <img src="Assets/novedades/horarios3.png" class="img-fluid galeria-img rounded" alt="Foto 3">
+                  <img src="Assets/novedades/horarios3.png" class="img-fluid galeria-img rounded" alt="Foto 3" onclick="mostrarImagen(this.src)">
                 </div>
             </div>
+
+              <!-- Modal para mostrar la imagen en grande -->
+              <div id="modal" class="modal">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <img class="modal-content" id="imagenAmpliada">
+              </div>
                 
           </div>
             
 
-            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded">
+            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary rounded shadow-pop">
                 <div class="clearfix p-5">
                     <img src="Assets/novedades/recorda.png" class="col-md-6 me-4 float-md-start rounded img-fluid" alt="...">
                   
@@ -164,7 +171,7 @@
             </div>
             
             
-            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary">
+            <div class="row mt-4 justify-content-center shadow-lg bg-body-tertiary shadow-pop">
                 <div class="card text-center">
                     <div class="card-header">
                       ¡Novedades!

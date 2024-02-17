@@ -1,23 +1,23 @@
 [
     {
         "url": "Assets/productos/proteEnaHD.png",
-        "descripcion": "Suplemento en polvo ENA Sport True Made Whey Protein proteínas sabor vanilla ice cream en pote de 930g"
+        "descripcion": "ENA Sport Whey Protein sabor vanilla ice cream 930g"
     },
     {
         "url": "Assets/productos/proteStarHD.png",
-        "descripcion": "Suplemento En Polvo Star Nutrition Whey Protein Proteínas Sabor Chocolate En Bolsa De 908g"
+        "descripcion": "Star Nutrition Whey ProteinSabor Chocolate 908g"
     },
     {
         "url": "Assets/productos/proteBudyHD.png",
-        "descripcion": "Whey Protein 3kg Body Advance Proteína Concentrada Premium Sabor Vainilla"
+        "descripcion": "Body Advance Whey Protein Sabor Vainilla 3kg"
     },
     {
         "url": "Assets/productos/proteHardcoreHD.png",
-        "descripcion": "Suplemento en polvo Hardcore Nutrition Ultra Gold Qualitty Whey Protein proteínas sabor chocolate en sachet de 1kg"
+        "descripcion": "Hardcore Nutrition Whey Protein sabor chocolate 1kg"
     },
     {
         "url": "Assets/productos/proteStar2HD.png",
-        "descripcion": "Suplemento en polvo Star Nutrition Platinum Whey Protein proteína sabor chocolate suizo en pote de 908g"
+        "descripcion": "Star Nutrition Platinum Whey Proteinsabor chocolate suizo 908g"
     },
     {
         "url": "Assets/productos/proteVeganHD.png",
@@ -25,75 +25,75 @@
     },
     {
         "url": "Assets/productos/proteEna2HD.png",
-        "descripcion": "Pea Protein Isolate 908 Gr Protein Project - Proteina Vegana"
+        "descripcion": "ENA Sport Whey Protein GOLD sabor vanilla 930g"
     },
     {
         "url": "Assets/productos/creatinaBody.png",
-        "descripcion": "Creatina Micronizada Pura X Body Sabor Sin Sabor"
+        "descripcion": "Pura X Body Creatina Micronizada Sin Sabor"
     },
     {
         "url": "Assets/productos/creatinaEna.png",
-        "descripcion": "Creatina micronizada 100% Pura en Doypack de 300g sabor neutro"
+        "descripcion": "ENA Creatina micronizada 300g sabor neutro"
     },
     {
         "url": "Assets/productos/creatinaEna2.png",
-        "descripcion": "Creatina micronizada 100% Pura en Doypack de 300g sabor frutilla"
+        "descripcion": "ENA Creatina micronizada 300g sabor Frutilla"
     },
     {
         "url": "Assets/productos/creatinaGrouth.png",
-        "descripcion": "+Growth Creatina monohidratada micronizada en Sachet de 300g"
+        "descripcion": "+Growth Creatina monohidratada micronizada 300g"
     },
     {
         "url": "Assets/productos/creatinaMaverick.png",
-        "descripcion": "Creatina Monohidrato Premium, Potenciador 300g"
+        "descripcion": "Maverick Creatina Monohidrato Premium 300g"
     },
     {
         "url": "Assets/productos/creatinaNutremax.png",
-        "descripcion": "Nutremax Creatina Micronizada Creatina En Pote De 200g"
+        "descripcion": "Nutremax Creatina Micronizada Premium 200g"
     },
     {
         "url": "Assets/productos/creatinaOptimun.png",
-        "descripcion": "Optimum Nutrition Creatina Micronizada. Suplemento en polvo. Pote de 300g"
+        "descripcion": "Optimum Nutrition Creatina Micronizada 300g"
     },
     {
         "url": "Assets/productos/creatinaStar.png",
-        "descripcion": "Star Nutrition Creatina 100% Pura en pote de 300g"
+        "descripcion": "Star Nutrition Creatina 100% Pura 300g"
     },
     {
         "url": "Assets/productos/creatinaUltra.png",
-        "descripcion": "Ultratech Nutrition Classic Creatine creatina monohidratada en pote de 500g"
+        "descripcion": "Ultratech Nutrition creatina monohidratada 500g"
     },
     {
         "url": "Assets/productos/prePump.png",
-        "descripcion": "Star Nutrition Pump V8 aminoácidos sabor watermelon en pote de 285g"
+        "descripcion": "Star Nutrition aminoácidos sabor watermelon 285g"
     },
     {
         "url": "Assets/productos/prePump2.png",
-        "descripcion": "Star Nutrition Pump V8 aminoácidos sabor açai power en pote de 285g"
+        "descripcion": "Star Nutrition aminoácidos sabor açai power 285g"
     },
     {
         "url": "Assets/productos/prePump3.png",
-        "descripcion": "Star Nutrition 285 Gr Cafeína Taurina Sabor Grape"
+        "descripcion": "Star Nutrition aminoácidos sabor grape 285g"
     },
     {
         "url": "Assets/productos/prePump4.png",
-        "descripcion": "Star Nutrition Pump V8 aminoácidos sabor citrus slush en pote de 285g"
+        "descripcion": "Star Nutrition aminoácidos sabor citrus 285g"
     },
     {
         "url": "Assets/productos/bcaaEna.png",
-        "descripcion": "Bcaa 12:1:1 Ena Super Ratio 120 Caps Aminoacidos Ramificados Sin Sabor"
+        "descripcion": "ENA Bcaa 120 Caps Aminoacidos Ramificados Sin Sabor"
     },
     {
         "url": "Assets/productos/bcaaHtn.png",
-        "descripcion": "Bcaa 8.0 Htn Polvo - Aminoacidos"
+        "descripcion": "Htn Bcaa 8.0 Aminoacidos en polvo sin sabor"
     },
     {
         "url": "Assets/productos/bcaaStar.png",
-        "descripcion": "Mtor Bcaa 270g Blue Raz - Star Nutrition"
+        "descripcion": "Star Nutrition Mtor Bcaa  Blue Raz 270g"
     },
     {
         "url": "Assets/productos/bcaaStar2.png",
-        "descripcion": "Mtor Bcaa Fruit Punch 270g - Star Nutrition"
+        "descripcion": "Star Nutrition Mtor Bcaa Fruit Punch 270g"
     }
 
 

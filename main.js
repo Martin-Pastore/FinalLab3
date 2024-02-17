@@ -28,8 +28,8 @@ function mostrarDatosEnHTML(datos) {
         const tarjeta = document.createElement('div');
         tarjeta.className = 'col';
         tarjeta.innerHTML = `
-            <div class="card">
-                <img src="${producto.url}" class="card-img-top" alt="imagen">
+            <div class="card" id="suplementos">
+                <img src="${producto.url}" class="card-img-top pointer" alt="suplementos" onclick="mostrarImagen(this.src)">
                 <div class="card-body">
                     <p class="card-text">${producto.descripcion}</p>
                 </div>
@@ -297,7 +297,7 @@ function animar(){
     document.getElementById('loader').classList.toggle("ocultar")
     document.getElementById('titulo').classList.add("animated-text")
     document.getElementById('subtitulo').classList.add("animated-text")
-    console.log("cargado")
+    
 }
 
 window.addEventListener("load", function(){
@@ -317,4 +317,15 @@ function mostrarImagen(src) {
   function cerrarModal() {
     var modal = document.getElementById('modal');
     modal.style.display = 'none';
+  }
+
+  //animacion shake
+
+  function sacudir(elemento) {
+    elemento.classList.add("shaking");
+    
+    // Remueve la clase 'shaking' después de la duración de la animación
+    setTimeout(function() {
+      elemento.classList.remove("shaking");
+    }, 500);
   }
