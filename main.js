@@ -302,13 +302,11 @@ function validarVeces(){
 
 function animar(){
     document.getElementById('loader').classList.toggle("ocultar")
-    document.getElementById('titulo').classList.add("animated-text")
-    document.getElementById('subtitulo').classList.add("animated-text")
     
 }
 
 window.addEventListener("load", function(){
-    setTimeout(animar,800)
+    setTimeout(animar,500)
     
 })
 
@@ -334,5 +332,9 @@ function mostrarImagen(src) {
     // Remueve la clase 'shaking' después de la duración de la animación
     setTimeout(function() {
       elemento.classList.remove("shaking");
-    }, 500);
+    }, 600);
   }
+
+
+
+  
