@@ -1,15 +1,5 @@
 
 @font-face {
-    font-family: 'Governor-Engraved';
-    src:url('Assets/webfonts/Governor-Engraved.ttf.woff') format('woff'),
-        url('Assets/webfonts/Governor-Engraved.ttf.svg#Governor-Engraved') format('svg'),
-        url('Assets/webfonts/Governor-Engraved.ttf.eot'),
-        url('Assets/webfonts/Governor-Engraved.ttf.eot?#iefix') format('embedded-opentype'); 
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Anton';
     src:url('Assets/Anton/Anton-Regular.ttf');
         
@@ -43,7 +33,13 @@
 }
 
 .custom-icon {
-  color: white; /* Puedes cambiar "red" por el color que desees */
+  color: white; 
+}
+
+@media (max-width: 300px) {
+  .iconFooter{
+    display: none;
+  }
 }
 
 
@@ -51,7 +47,7 @@
 
     overflow:hidden;
 
-    padding-bottom:56.25%;
+    padding-bottom:56.25%; /*relacion de aspecto 16:9*/
 
     position:relative;
 
@@ -78,7 +74,6 @@
     font-size: small;   
     color: red;
     
-
 }
 
 .succes{
@@ -91,25 +86,18 @@
 }
 
 .mi-clase-botones {
-    width: auto; /* O el ancho deseado para el botón */
-    margin: 0 auto; /* Centra el botón horizontalmente */
+    width: auto; 
+    margin: 0 auto; /* centra el botón horizontalmente */
  }
 
  
-  .animacion{
-    transform:translateZ(0) rotateY(0);
-    transform:translateZ(160px) rotateY(180deg);
-    animation: 4s cubic-bezier(.455,.03,.515,.955) both;
-  }
 
-  
-
-  .fade-in {
+  .show-fade-in{
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
   
-  .fade-in:hover {
+  .show-fade-in:hover {
     opacity: 1;
   }
 
@@ -118,32 +106,27 @@
   }
   
   .bounce:hover {
-    transform: translateY(-20px); /* O cualquier transformación deseada */
+    transform: translateY(-20px); 
   }
 
   .shadow-pop {
-     position: relative;
-      transition: box-shadow ease-in-out;
+    position: relative;
+    transition: box-shadow ease-in-out;
   }
   
   .shadow-pop:hover {
     transition: 0.5s;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transform: scale(1.1); /* Otra opción: aumentar el tamaño */
+    transform: scale(1.05); 
   }
 
   
 
-  @media screen and (min-width: 780px) {
-     img{
-      margin: 0;
-    }
-    
-  }
+ 
 
   @media (max-width: 768px) {
     /* Anulamos el efecto de hover para pantallas pequeñas */
-    .bounce:hover {
+    .bounce:hover, .shadow-pop:hover {
       transform: none; /* Restablecemos la transformación a su estado original */
     }
 
@@ -152,6 +135,7 @@
 
 
 /* animacion de slider */
+  
   .slider-frame {
     overflow: hidden;
   }
@@ -196,13 +180,13 @@
     }
   }
 
-  /* Aplica la animación 'slideIn' al elemento con la clase 'animated-text' */
+  /* animacion de elevarse y aparecer*/
   .animated-text {
     animation: slideIn 2.5s ease;
   }
 
 
-
+ /*contenedor del loader*/
   .loader-wrapper {
     position: fixed;
     top: 0;
@@ -229,6 +213,7 @@
     animation: spin 1s linear infinite;
   }
   
+  /*animacion de girar*/
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -251,10 +236,10 @@
 
   .galeria-img:hover {
     opacity: 0.7;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
-  /* Estilo del modal */
+/* Estilo del modal */
 .modal {
   display: none;
   position: fixed;
@@ -284,7 +269,7 @@
   font-weight: bold;
   position: absolute;
   top: 100px;
-  right: 25px;
+  right: 150px;
   cursor: pointer;
 }
 
@@ -305,13 +290,17 @@
   filter: contrast(120%);
 }
 
+@media (max-width: 1000px) {
+  
+  .close{
+    right: 25px;
+  } 
+  
+}
+
 /*animacion shake*/
 
-.shakeable {
-  cursor: pointer;
- }
- 
- /* Define la animación de sacudida */
+/* Define la animación de sacudida */
  @keyframes shake {
    0% { transform: translateX(0); }
    25% { transform: translateX(-5px); }
@@ -320,6 +309,7 @@
    100% { transform: translateX(0); }
  }
 
+ /*sacudida arriba y abajo*/
  @keyframes shake-up {
   0% { transform: translateY(0); }
   25% { transform: translateY(-5px); }
@@ -328,15 +318,14 @@
   100% { transform: translateY(0); }
 }
  
- /* Aplica la animación a la clase 'shake' */
+ /* Aplica la animación a la clase 'shaking' */
  .shaking {
    animation: shake 0.5s;
  }
 
- .blur{
-  animation: fadeIn 3s ease;
-}
+ 
 
+/*animacion de desenfoque*/
 
 @keyframes fadeIn {
   0% {
@@ -351,12 +340,8 @@
   
 }
 
-
-.animated-title {
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: moveFromLeft 2s ease;
+.blur{
+  animation: fadeIn 3s ease;
 }
 
 /* Animación para desplazarse desde la izquierda */
@@ -367,6 +352,13 @@
   to {
     transform: translateX(0);
   }
+}
+
+.animated-title {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: moveFromLeft 2s ease;
 }
 
 /* Animación para desplazarse desde arriba*/
@@ -385,8 +377,6 @@
   
   animation: moveFromTop 2.3s ease;
 }
-
-
 
 
 @keyframes moveFromRigth {
@@ -434,9 +424,10 @@
 }
 
 .formulario{
-  border: solid 1px #fd7b02;
+  border: solid 2px #fd7b02;
   border-radius: 5px;
 }
+
 
 #enviarBtn {
   background-color: #fd7b02;
@@ -467,19 +458,16 @@ form input, form select {
   border-radius: 5px; /* Bordes redondeados */
 }
 
-/* Estilos adicionales para el input cuando está enfocado (con el cursor dentro) */
+/*adicionales para el input cuando está enfocado (con el cursor dentro) */
 form input:focus, form select:focus {
-  outline: none; /* Elimina el contorno predeterminado del navegador */
-  border-color: #fd7b02; /* Cambia el color del borde al enfocar */
-  box-shadow: 0 0 5px #fd7b02; /* Agrega una sombra al enfocar */
+  outline: none; 
+  border-color: #fd7b02; 
+  box-shadow: 0 0 5px #fd7b02; /* agrega una sombra al enfocar */
 }
 
 
 
-
-
-
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 760px) {
   .margin-l {
     margin-left: 0;
     margin-bottom: 20px;
@@ -502,9 +490,6 @@ form input:focus, form select:focus {
   }
   
   
-  #img-gracias{
-    display: none;
-  }
 
 }
 

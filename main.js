@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Ruta al archivo JSON
-    const jsonFilePath = 'productos.json';
+    const urlJSON = 'productos.json';
 
     // Llamada a la función para cargar y mostrar los datos
-    cargarYMostrarDatos(jsonFilePath);
+    cargarYMostrarDatos(urlJSON);
 });
 
-function cargarYMostrarDatos(jsonFilePath) {
+function cargarYMostrarDatos(urlJSON) {
     // Utilizar fetch para cargar el archivo JSON
-    fetch(jsonFilePath)
+    fetch(urlJSON)
         .then(response => response.json())
         .then(datos => {
             // Mostrar los datos en el HTML
@@ -31,7 +31,7 @@ function mostrarDatosEnHTML(datos) {
             <div class="card" id="suplementos">
                 <img src="${producto.url}" class="card-img-top pointer" alt="suplementos" onclick="mostrarImagen(this.src)">
                 <div class="card-body">
-                    <p class="card-text">${producto.descripcion}</p>
+                    <p class="card-text text-center">${producto.descripcion}</p>
                 </div>
             </div>
         `;
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         validarVeces()){
             
             boton.classList.add('exito')
-            boton.innerText = '✅ Enviado! '
+            boton.innerText = '✅ Enviado!'
             setTimeout(function() {
                 form.submit()
                 boton.classList.remove('exito')
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function mostrarError(id, mensaje) {
+function mostrarError(id, mensaje) { //funcion para poder mostrar los mensajes de error
     const elementoError = document.getElementById(id);
     if (elementoError) {
         elementoError.innerHTML = mensaje;
@@ -119,24 +119,23 @@ function resetearMensajesError() {
 function validarNombre() {
     
     let Nombre = document.getElementById('nombre');
-    // Expresión regular para verificar que solo haya una palabra
-    const expresionRegular = /^\S+$/;
+    // Expresión regular para verificar que solo haya letras
+    // y que cada palabra tenga un minimo de 3 letras
+    const expresionRegular = /^[a-zA-Z]{3,}(?:\s[a-zA-Z]{3,})*$/
     
-    if(Nombre.value.length < 3 ){
-        mostrarError("errorNombre", "Nombre muy Corto")
+    if(Nombre.value.trim() === ''){
+        mostrarError("errorNombre", "El campo no puede estar vacio")
+        Nombre.classList.add('error')
+        return false
+    }
+    
+    if(!expresionRegular.test(Nombre.value)){
+        mostrarError("errorNombre", "Debe ser un nombre valido")
         Nombre.classList.add('error')
         return false
     }
 
-    if(!expresionRegular.test(Nombre.value)){
-        mostrarError("errorNombre", "Solo debe ser una palabra")
-        Nombre.classList.add('error')
-    }
-
-    if(Nombre.value.trim() === ''){
-        mostrarError("errorNombre", "El campo No puede estar vacio")
-        Nombre.classList.add('error')
-    }
+    
 
     Nombre.classList.remove('error')
     Nombre.classList.add('succes')
@@ -146,28 +145,24 @@ function validarNombre() {
 
 function validarApellido() {
     
-    let Apellido = document.getElementById('apellido');
-    // Expresión regular para verificar que solo haya una palabra
-    const expresionRegular = /^\S+$/;
+    let Apellido = document.getElementById('apellido')
+    /// Expresión regular para verificar que solo haya letras
+    // y que cada palabra tenga un minimo de 3 letras
+    const expresionRegular = /^[a-zA-Z]{3,}(?:\s[a-zA-Z]{3,})*$/
     
-    if(Apellido.value.length < 3 ){
-        mostrarError("errorApellido", "Apellido muy Corto")
+    if(Apellido.value.trim() === ''){
+        mostrarError("errorApellido", "El campo no puede estar vacio")
         Apellido.classList.add('error')
         return false
     }
 
     if(!expresionRegular.test(Apellido.value)){
-        mostrarError("errorApellido", "Solo debe ser una palabra")
+        mostrarError("errorApellido", "Debe ser un apellido valido")
         Apellido.classList.add('error')
         return false
     }
 
-    if(Apellido.value.trim() === ''){
-        mostrarError("errorApellido", "El campo No puede estar vacio")
-        Apellido.classList.add('error')
-        return false
-    }
-
+    
     Apellido.classList.remove('error')
     Apellido.classList.add('succes')
     return true
@@ -176,18 +171,22 @@ function validarApellido() {
 function validarCorreo(){
 
     let Correo = document.getElementById('correo');
+    //expresion regular que verifica formato de usuario@dominio.ext
     const expresionRegular = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+    
+    if(Correo.value.trim() === ''){
+        mostrarError("errorCorreo", "El campo No puede estar vacio")
+        Correo.classList.add('error')
+        return false
+    }
+
     if (!expresionRegular.test(Correo.value)){
         mostrarError("errorCorreo", "introduzca una direccion valida")
         Correo.classList.add('error')
         return false
     }
 
-    if(Correo.value.trim() === ''){
-        mostrarError("errorCorreo", "El campo No puede estar vacio")
-        Correo.classList.add('error')
-        return false
-    }
+    
 
     Correo.classList.remove('error')
     Correo.classList.add('succes')
@@ -199,38 +198,40 @@ function validarFecha(){
 
     let Fecha = document.getElementById('fechaNacimiento')
 
-    // Obtener la fecha actual
-    var fechaActual = new Date();
+    // obtener la fecha actual
+    let fechaActual = new Date();
 
-    // Configurar la fecha mínima como hace 10 años desde la actual
-    var fechaMinima = new Date();
-    fechaMinima.setFullYear(fechaActual.getFullYear() - 10);
+    // configurar la fecha mínima como hace 18 años desde la actual
+    let fechaMinima = new Date();
+    fechaMinima.setFullYear(fechaActual.getFullYear() - 18);
 
-    // Configurar la fecha máxima como la fecha actual
-    var fechaMaxima = fechaActual;
+    // fecha máxima como la fecha actual
+    let fechaMaxima = fechaActual;
 
-    // Convertir la fecha de nacimiento a objeto Date para comparación
-    var fechaNacimientoDate = new Date(Fecha.value);
-
-    // Verificar si la fecha de nacimiento es menor a 10 años desde la actual
-    if (fechaNacimientoDate > fechaMinima) {
-        mostrarError('errorFechaNacimiento', 'No puedes ser menor de 10 años');
-        Fecha.classList.add('error')
-        return false
-    }
-
-    // Verificar si la fecha de nacimiento es mayor a la fecha actual
-    if (fechaNacimientoDate > fechaMaxima) {
-        mostrarError('errorFechaNacimiento', 'La fecha de nacimiento no puede ser mayor a la fecha actual.');
-        Fecha.classList.add('error')
-        return false
-    }
+    // fecha de nacimiento a objeto Date para comparación
+    let fechaNacimientoDate = new Date(Fecha.value);
 
     if (Fecha.value === ''){
         mostrarError("errorFechaNacimiento", "Seleccione una Fecha")
         Fecha.classList.add('error')
         return false
     }
+    
+    // verificar si la fecha de nacimiento es menor a 18 años desde la actual
+    if (fechaNacimientoDate > fechaMinima) {
+        mostrarError('errorFechaNacimiento', 'No puedes ser menor de 18 años');
+        Fecha.classList.add('error')
+        return false
+    }
+
+    // verificar si la fecha de nacimiento es mayor a la fecha actual
+    if (fechaNacimientoDate > fechaMaxima) {
+        mostrarError('errorFechaNacimiento', 'La fecha de nacimiento no puede ser mayor a la fecha actual');
+        Fecha.classList.add('error')
+        return false
+    }
+
+    
 
     Fecha.classList.remove('error')
     Fecha.classList.add('succes')
@@ -242,17 +243,17 @@ function validarTelefono() {
     let Telefono = document.getElementById('telefono')
 
     // Expresión regular para verificar el formato del teléfono
-    var formatoTelefono = /^\d{3,4}-\d{6}$/;
-
-    // Verificar si el formato del teléfono es válido
-    if (!formatoTelefono.test(Telefono.value)) {
-        mostrarError('errorTelefono', 'Ingresa un número de teléfono válido (por ejemplo, 123-456789).');
-        Telefono.classList.add('error')
-        return false
-    }
+    let formatoTelefono = /^\d{3,4}-\d{6}$/;
 
     if(Telefono.value.trim() === ''){
         mostrarError('errorTelefono', 'Ingresa un número de teléfono');
+        Telefono.classList.add('error')
+        return false
+    }
+    
+    // Verificar si el formato del teléfono es válido
+    if (!formatoTelefono.test(Telefono.value)) {
+        mostrarError('errorTelefono', 'Ingresa un número de teléfono válido (por ejemplo, 123-456789).');
         Telefono.classList.add('error')
         return false
     }
@@ -300,40 +301,39 @@ function validarVeces(){
     
 }
 
-function animar(){
+function loader(){
     document.getElementById('loader').classList.toggle("ocultar")
     
 }
 
 window.addEventListener("load", function(){
-    setTimeout(animar,500)
+    setTimeout(loader,500)
     
 })
 
 // Función para mostrar la imagen en grande al hacer clic en la miniatura
 function mostrarImagen(src) {
-    var modal = document.getElementById('modal');
-    var modalImg = document.getElementById('imagenAmpliada');
+    let modal = document.getElementById('modal');
+    let modalImg = document.getElementById('imagenAmpliada');
     modal.style.display = 'flex';
     modalImg.src = src;
   }
   
   // Función para cerrar el modal
-  function cerrarModal() {
-    var modal = document.getElementById('modal');
+function cerrarModal() {
+    let modal = document.getElementById('modal');
     modal.style.display = 'none';
-  }
+}
 
-  //animacion shake
-
-  function sacudir(elemento) {
+//animacion shake
+function sacudir(elemento) {
     elemento.classList.add("shaking");
     
     // Remueve la clase 'shaking' después de la duración de la animación
     setTimeout(function() {
       elemento.classList.remove("shaking");
     }, 600);
-  }
+}
 
 
 
